@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        body {
+            font-size: 12px;
+            position: relative;
+            overflow-x: hidden;
+            background: #EEE;
+            color: #222;
+        }
+
+
+        html {
+            overflow-x: hidden;
+            height: 3000px;
+        }
+
+        ul, li {
+            list-style-type: none;
+        }
+
+        a {
+            color: #535353;
+            text-decoration: none;
+        }
+
+        .clearfix {
+            display: block;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .cl {
+            clear: both;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .active {
+            background: #fff;
+        }
+
+        .mid-wrap {
+            height: 1000px;
+            position: relative;
+            z-index: 100;
+            background: url(./img/group_2_bg.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .mid-wrap .pro_list {
+            width: 1152px;
+            position: relative;
+            float: right;
+        }
+
+        .mid-wrap .pro_list ul li {
+            float: left;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item {
+            width: 768px;
+            height: 500px;
+
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .info {
+            width: 304px;
+            height: 420px;
+            position: relative;
+            text-align: right;
+            padding: 40px;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .info i {
+            position: absolute;
+            right: -16px;
+            top: 50%;
+            margin-top: -14.5px;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .info h2,
+        .mid-wrap .pro_list ul li .mid-item .info h3 {
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .info h2 {
+            font-size: 30px;
+            font-family: Arial;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .info h3 {
+            font-family: Arial;
+            font-size: 20px;
+            padding: 20px 0 60px 0;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .info p {
+            line-height: 22px;
+            font-size: 13px;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .info a.more {
+            font-size: 12px;
+            font-family: Arial;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: inline-block;
+            width: 135px;
+            height: 28px;
+            text-align: right;
+            line-height: 28px;
+            color: #222;
+            background: #fff;
+            padding-right: 15px;
+            position: absolute;
+            right: 40px;
+            bottom: 50px;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .info a:hover {
+            background: #ff4200;
+            color: #fff;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .black {
+            background: #222;
+            color: #fff;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .mid-img a {
+            width: 383px;
+            height: 500px;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .mid-img img {
+            vertical-align: middle;
+            transition: all 0.8s ease-in-out;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .mid-img a:hover img {
+            -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+            -o-transform: scale(1.1);
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .e42774 {
+            background: #427e74;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .e68697 {
+            background: #686e97;
+        }
+
+        .mid-wrap .pro_list ul li.item1 {
+            width: 768px;
+        }
+
+        .mid-wrap .pro_list ul li.item2 {
+            width: 384px;
+        }
+
+        .mid-wrap .pro_list ul li.item3 {
+            position: absolute;
+            width: 768px;
+            height: 500px;
+            background-color: #fff;
+            right: 768px;
+            top: 500px;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .gay {
+            background: #f6f6f6;
+            color: #222;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .gay a.more {
+            background: #222;
+            color: #fff;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .red {
+            background: #ff4200;
+            color: #FFF;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .red a.more {
+            color: #ff4200;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .red a.more:hover {
+            background: #000;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .specialinfo {
+            width: 688px;
+            height: 420px;
+            position: relative;
+            text-align: right;
+            padding: 40px;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .specialinfo h2,
+        .mid-wrap .pro_list ul li .mid-item .specialinfo h3 {
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .specialinfo h2 {
+            font-size: 70px;
+            font-family: Arial;
+            color: #ff4200;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .specialinfo .line {
+            width: 85px;
+            height: 4px;
+            background: #222;
+            float: right;
+            margin: 20px 0 10px 0;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .specialinfo h3 {
+            font-family: Arial;
+            font-size: 20px;
+            padding: 20px 0 10px 0;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .specialinfo p {
+            line-height: 22px;
+            font-size: 13px;
+            color: #696969;
+            text-transform: uppercase;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .specialinfo a.more {
+            font-size: 12px;
+            font-family: Arial;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: inline-block;
+            width: 135px;
+            height: 28px;
+            text-align: right;
+            line-height: 28px;
+            color: #fff;
+            background: #222;
+            padding-right: 15px;
+            position: absolute;
+            right: 40px;
+            bottom: 50px;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .mid-wrap .pro_list ul li .mid-item .specialinfo a.more:hover {
+            background: #ff4200;
+            color: #FFF;
+        }
+
+        /*滚动条样式*/
+        ::-webkit-scrollbar-track-piece {
+            width: 7px;
+            background-color: #f53f00;
+        }
+
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 6px;
+            -webkit-border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            height: 50px;
+            background-color: #FFF;
+            -webkit-border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cc0000;
+        }
+
+        ></style>
+</head>
+<body>
+<div class="mid-wrap">
+    <div class="pro_list">
+        <ul>
+            <li class="item1">
+                <div class="mid-item clearfix">
+                    <div class="info fl black">
+                        <i><img src="img/icon.png" height="29" width="16"/></i>
+                        <h2>The Red Orange</h2>
+                        <h3>中华红（血橙）</h3>
+                        <p>
+                        <p style="text-indent: 21pt;"> 血橙（<span>blood&nbsp;orange</span><span>）是橙（</span><span>Citrus&nbsp;sinensis</span><span>）的变种，俗称红橙。中华红是秭归脐橙的特种橙果果实圆球形，单果重</span><span>180</span><span>～</span><span>240</span><span>克。果皮深橙色，较光滑，果皮较薄，闭脐，果肉呈红色。肉质脆嫩化渣风味酸甜爽口，品质优良。为春节上等礼品果，也是中华红橙酒的上等原料</span>
+                        </p>
+                        </p>
+                        <a href="#" class=" more">read more</a>
+                    </div>
+                    <div class="mid-img fl e42774"><a href="#"><img src="img/54f6e439ccef1.png"/></a></div>
+                </div>
+            </li>
+            <li class="item2">
+                <div class="mid-item clearfix">
+                    <div class="info fl gay">
+                        <i><img src="img/icon.png" height="29" width="16"/></i>
+                        <h2>The Newhall plus</h2>
+                        <h3>长红</h3>
+                        <p>
+                        <p style="text-indent:21pt;">
+                            长红脐橙是从引进的纽荷尔脐橙品种中选出的一个优良品系，<span>2001</span><span>年根据农业部的统一安排，通过</span><span>"948"</span><span>项目从华中农大引入。果实高桩形（长卵形），果皮橙红光滑，果顶部较尖凸闭脐，肉脆化渣，风味浓甜</span>
+                        </p></p>
+                        <a href="#" class="more">read more</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item3">
+                <div class="mid-item">
+                    <div class="specialinfo">
+                        <h2>roductS</h2>
+                        <div class="line"></div>
+                        <div class="cl"></div>
+                        <h3>以橙鲜果</h3>
+                        <p>orange for you,to be youself</p>
+                        <a href="#" class="more">read more</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item1" style="float: right;">
+                <div class="mid-item clearfix">
+                    <div class="info fl red">
+                        <i> <img src="img/icon2.png" height="33" width="18"/></i>
+                        <h2>The Newhall</h2>
+                        <h3>纽荷尔（圆红）</h3>
+
+                        <p>
+                        <p style="text-indent:21pt;">
+                            纽荷尔脐橙<span>(Newhall&nbsp;navel&nbsp;orange)</span><span>原产于美国系由美国加利福尼亚州</span><span>Duarte</span><span>的华盛顿脐橙芽变而得我国于</span><span>1978</span><span>年将其引入，目前在脐橙主产省、市均有种植，在江西赣南、湖北秭归</span>、重庆奉节等地种植较多。果色橙红，果面光滑，多为闭脐。肉质细嫩而脆，化渣，多汁，可食率<span>73</span><span>％～</span><span>75</span><span>％</span>
+                        </p></p>
+                        <a href="/index.php/product/index.html" class="more">read more</a>
+                    </div>
+                    <div class="mid-img fl e68697">
+                        <a href="#"><<img src="img/54f6e64773c94.png" height="306" width="331"/></a></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<script src='./move.js'></script>
+<script>
+
+</script>
+</body>
+</html>

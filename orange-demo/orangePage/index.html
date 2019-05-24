@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style/page.css">
+    <script src="script/lib/jquery.js"></script>
+</head>
+<body>
+<div class="head clearfix">
+    <div class="menu_icon"><a href="#"></a></div>
+    <div class="logo"><a href="#"></a></div>
+    <ul class="clearfix">
+        <li><a href="#" class="current"><span class="ch"></span>首页<span class="en">HOME</span></a></li>
+        <li><a href="#"><span class="ch"></span>以橙介绍<span class="en"></span>ABOUT</a></li>
+        <li><a href="#" class="selected"><span class="ch"></span>以橙鲜果<span class="en">PRODUCTS</span></a></li>
+        <li><a href="#"><span class="ch"></span>资讯视点<span class="en">NEWS</span></a></li>
+    </ul>
+</div>
+<div class="pro_selected">
+    <ul class="clearfix">
+        <li><a href="#"><img src="imgs/54f6e8c373052.png" height="100" width="108"/>
+            <p>以橙·中华红（血橙）</p></a></li>
+        <li><a href="#"><img src="imgs/54f6e862d0dbe.png" height="100" width="108"/>
+            <p>以橙·九月红</p></a></li>
+        <li><a href="#"><img src="imgs/54f6e7d6c534f.png" height="100" width="108"/>
+            <p>以橙·纽荷尔（圆红）</p></a></li>
+        <li><a href="#"><img src="imgs/54f6e78e289a7.png" height="100" width="108"/>
+            <p>以橙·长红</p></a></li>
+        <li><a href="#"><img src="imgs/54f6e813d4a88.png" height="100" width="108"/>
+            <p>以橙·桃叶橙</p></a></li>
+        <li><a href="#"><img src="imgs/552260f738138.png" height="100" width="108"/>
+            <p>以橙·伦晚</p></a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".pro_selected").hide()
+        $(".head ul li a.selected").hover(function () {
+            $(".pro_selected").fadeIn(200)
+            $(this).addClass("current")
+            $(".head").addClass("top_active")
+        })
+
+        $(".pro_selected").hover(function () {
+                $(this).fadeIn(200)
+            }, function () {
+                $(this).fadeOut(200)
+
+            }
+        )
+    });
+</script>
+<div class="top-wrap">
+    <ul class="sliderPage">
+        <li><img src="imgs/56454adf3119b.jpg" height="1200" width="2100"/></li>
+        <li><img src="imgs/563c1a6db2f22.jpg" height="1200" width="2100"/></li>
+        <li><img src="imgs/54fd71007b134.jpg" height="1200" width="2100"/></li>
+        <li><img src="imgs/54fd71143ff59.jpg" height="1200" width="2100"/></li>
+        <li><img src="imgs/54fd712120b23.jpg" height="1200" width="2100"/></li>
+        <li><img src="imgs/55225d585e421.jpg" height="1200" width="2100"/></li>
+        <li><img src="imgs/54fd6fa92ae5f.jpg" height="1200" width="2100"/></li>
+        <li><img src="imgs/56454adf3119b.jpg" height="1200" width="2100"/></li>
+    </ul>
+    <div class="sliderIndex">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<script src="script/move.js"></script>
+<script src="script/page.js"></script>
+<script>
+    $(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 100) {
+                $(".head").addClass("top_active")
+            } else {
+                $(".head").removeClass("top_active")
+            }
+        });
+    });
+    $(document).ready(function () {
+        $(".head .menu_icon a").click(function () {
+            $(".head ul").toggle(500)
+        });
+
+        $(".head ul li a").hover(function () {
+                $("span.ch", this).animate({"margin-top": "-34px"})
+            }, function () {
+                $("span.ch", this).animate({"margin-top": "0"})
+            }
+        )
+    })
+</script>
+</body>
+</html>
