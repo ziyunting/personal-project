@@ -1,0 +1,15 @@
+<!--pages/index/index.wxml-->
+<!--<text>pages/index/index.wxml</text>-->
+
+
+<!--div &#45;&#45;view容器组件-->
+<!--img &#45;&#45;image图片组件-->
+<!--span &#45;&#45;text文字组件-->
+
+<view class="container">
+    <!--因为在小程序中，是默认以创建的目录为根目录的，所以可以使用绝对路径-->
+    <!--<image src="../../image/avatar.jpg"></image>-->
+    <image class="avatar" src="/image/avatar.jpg"></image>
+    <text class="name" decode="true">郑&nbsp;福&nbsp;康</text>
+    <text class="title" bindtap="toNextPage">第一个小程序</text>
+</view>

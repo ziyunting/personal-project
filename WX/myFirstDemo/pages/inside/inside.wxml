@@ -1,0 +1,11 @@
+<!--pages/inside/inside.wxml-->
+<!-- <text>pages/inside/inside.wxml</text> -->
+<view class="container">
+    <view class="picture-box">
+        <image class="picture" src="/image/picture.png" mode="widthFix"></image>
+        <text class="title">是否要卸下残红熄灭娇纵才会被施以恩宠也曾是朱砂心口月光窗头杯一腔热血孤勇</text>
+    </view>
+    <view class="name-box">
+        <text bindtap="ceshi">--愿你慢慢长大--刘瑜</text>
+    </view>
+</view>
