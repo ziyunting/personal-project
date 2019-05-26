@@ -5,12 +5,12 @@
     <!--推荐-->
     <view class="recommend-container">
     <view class="recommend-article">
-    <text class="date">十月七日</text>
-    <text class="recommend-title">点评人荐文：居安思危的前瞻性</text>
-    <image class="recommend-cover" src="/image/list/recommend-image.png" mode="widthFix"></image>
+    <text class="date">{{date}}</text>
+    <text class="recommend-title">{{title}}</text>
+    <image class="recommend-cover" src="{{imgSrc}}" mode="widthFix"></image>
     </view>
     <view class="recommend-box">
-    <text>+</text>
+    <text bind:tap="test">+</text>
     <text>女性穿搭</text>
     <text>男性穿搭</text>
     <text>心理</text>

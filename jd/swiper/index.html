@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+       <!-- <div class="swiper">
+           <ul class="img-list">
+               <li><img src="./image/pic1.png" alt=""></li>
+               <li><img src="./image/pic2.png" alt=""></li>
+               <li><img src="./image/pic3.png" alt=""></li>
+           </ul>
+       </div> -->
+    </div>
+    <script src="./jquery-3.3.1.js"></script>
+    <script src="./index.js"></script>
+    <script>
+
+        // 调用swiper方法 自动生成轮播图
+        $('.wrapper').carousel({
+            imgList: ["./image/pic1.jpg", "./image/pic2.jpg", "./image/pic3.jpg"],
+            showBtn: true,
+        });
+
+    </script>
+</body>
+</html>
