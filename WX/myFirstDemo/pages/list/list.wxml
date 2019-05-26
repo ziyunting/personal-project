@@ -1,15 +1,212 @@
 <!--pages/list/list.wxml-->
 <!--<text>pages/list/list.wxml</text>-->
 
-<view>
-    <view>
-        <view>
-            <text></text>
-            <text></text>
-            <image></image>
-        </view>
-        <view></view>
+<view class="container">
+    <!--推荐-->
+    <view class="recommend-container">
+    <view class="recommend-article">
+    <text class="date">十月七日</text>
+    <text class="recommend-title">点评人荐文：居安思危的前瞻性</text>
+    <image class="recommend-cover" src="/image/list/recommend-image.png" mode="widthFix"></image>
+    </view>
+    <view class="recommend-box">
+    <text>+</text>
+    <text>女性穿搭</text>
+    <text>男性穿搭</text>
+    <text>心理</text>
+    <text>深度阅读</text>
+    <text>人生整理术</text>
+    <text>读书</text>
+    <text>日韩剧</text>
+    <text>吃喝攻略</text>
+    <text>···</text>
+    </view>
 
     </view>
-    <view></view>
+    <!--列表-->
+    <view class="recommend-list-container">
+        <view class="per-article">
+            <view class="article-head">
+                <image src="/image/avatar.jpg"></image>
+                <text>neffy</text>
+                <text>等</text>
+                <text>96</text>
+                <text>人马克了</text>
+            </view>
+
+            <view class="article-cover">
+                <image src="/image/list/article/1.png"></image>
+            </view>
+
+            <view class="article-title">
+                <text>《吻》背后令人惊讶的往事</text>
+            </view>
+
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text>深度阅读</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image src="/image/list/article/icon/icon_more.png" mode="widthFix"></image>
+                    </view>
+                    <view>
+                        <image src="/image/list/article/icon/icon_relay.png"></image>
+                    </view>
+                    <view>
+                        <image src="/image/list/article/icon/icon_circle.png"></image>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+    <view class="recommend-list-container">
+        <view class="per-article">
+            <view class="article-head">
+                <image src="/image/avatar.jpg"></image>
+                <text>neffy</text>
+                <text>等</text>
+                <text>96</text>
+                <text>人马克了</text>
+            </view>
+
+            <view class="article-cover">
+                <image src="/image/list/article/1.png"></image>
+            </view>
+
+            <view class="article-title">
+                <text>《吻》背后令人惊讶的往事</text>
+            </view>
+
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text>深度阅读</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image src="/image/list/article/icon/icon_more.png" mode="widthFix"></image>
+                    </view>
+                    <view>
+                        <image src="/image/list/article/icon/icon_relay.png"></image>
+                    </view>
+                    <view>
+                        <image src="/image/list/article/icon/icon_circle.png"></image>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+    <view class="recommend-list-container">
+        <view class="per-article">
+            <view class="article-head">
+                <image src="/image/avatar.jpg"></image>
+                <text>neffy</text>
+                <text>等</text>
+                <text>96</text>
+                <text>人马克了</text>
+            </view>
+
+            <view class="article-cover">
+                <image src="/image/list/article/1.png"></image>
+            </view>
+
+            <view class="article-title">
+                <text>《吻》背后令人惊讶的往事</text>
+            </view>
+
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text>深度阅读</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image src="/image/list/article/icon/icon_more.png" mode="widthFix"></image>
+                    </view>
+                    <view>
+                        <image src="/image/list/article/icon/icon_relay.png"></image>
+                    </view>
+                    <view>
+                        <image src="/image/list/article/icon/icon_circle.png"></image>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+    <view class="recommend-list-container">
+        <view class="per-article">
+            <view class="article-head">
+                <image src="/image/avatar.jpg"></image>
+                <text>neffy</text>
+                <text>等</text>
+                <text>96</text>
+                <text>人马克了</text>
+            </view>
+
+            <view class="article-cover">
+                <image src="/image/list/article/1.png"></image>
+            </view>
+
+            <view class="article-title">
+                <text>《吻》背后令人惊讶的往事</text>
+            </view>
+
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text>深度阅读</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image src="/image/list/article/icon/icon_more.png" mode="widthFix"></image>
+                    </view>
+                    <view>
+                        <image src="/image/list/article/icon/icon_relay.png"></image>
+                    </view>
+                    <view>
+                        <image src="/image/list/article/icon/icon_circle.png"></image>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
+    <view class="recommend-list-container">
+        <view class="per-article">
+            <view class="article-head">
+                <image src="/image/avatar.jpg"></image>
+                <text>neffy</text>
+                <text>等</text>
+                <text>96</text>
+                <text>人马克了</text>
+            </view>
+
+            <view class="article-cover">
+                <image src="/image/list/article/1.png"></image>
+            </view>
+
+            <view class="article-title">
+                <text>《吻》背后令人惊讶的往事</text>
+            </view>
+
+            <view class="article-handle-box">
+                <view class="article-type">
+                    <text>深度阅读</text>
+                </view>
+                <view class="article-handle">
+                    <view>
+                        <image src="/image/list/article/icon/icon_more.png" mode="widthFix"></image>
+                    </view>
+                    <view>
+                        <image src="/image/list/article/icon/icon_relay.png"></image>
+                    </view>
+                    <view>
+                        <image src="/image/list/article/icon/icon_circle.png"></image>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+    </view>
 </view>
