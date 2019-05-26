@@ -1,2 +1,15 @@
 <!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+<!--<text>pages/list/list.wxml</text>-->
+
+<view>
+    <view>
+        <view>
+            <text></text>
+            <text></text>
+            <image></image>
+        </view>
+        <view></view>
+
+    </view>
+    <view></view>
+</view>
