@@ -2,9 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            left: 500px;
+            top: 0
+        }
+
+        button {
+            margin-top: 120px;
+        }
+
+        span {
+            position: absolute;
+            left: 300px;
+            width: 1px;
+            height: 100px;
+            background: #000;
+        }
+    </style>
 </head>
 <body>
-$END$
+<span></span>
+<div></div>
+<button id="btn">run</button>
+<script>
+    //缓冲运动
+    let oDiv = document.getElementsByTagName("div")[0];
+    let oBtn = document.getElementsByTagName('button')[0];
+    let timer = null;
+    oBtn.onclick = function () {
+        startMove(oDiv, 300);
+    };
+
+    function startMove(dom, target) {
+        let iSpeed = null;
+        clearInterval(timer);
+        timer = setInterval(function () {
+            iSpeed = (target - oDiv.offsetLeft) / 7;
+            iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+            if (oDiv.offsetLeft == target) {
+                clearInterval(timer);
+            } else {
+                dom.style.left = dom.offsetLeft + iSpeed + 'px';
+            }
+        })
+
+    }
+</script>
 </body>
 </html>

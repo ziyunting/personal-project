@@ -2,9 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>模拟重力场运动</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: orange;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="demo"></div>
+
+<script>
+    oDiv = document.getElementsByTagName('div')[0];
+    oDiv.onclick = function () {
+        startMove(this);
+    };
+
+    function startMove(dom) {
+        clearInterval(dom.timer);
+        let iSpeedX = 8,
+            iSpeedY = 0,
+            g = 9.8;
+        dom.timer = setInterval(function () {
+            iSpeedY += g;
+            let newTop = iSpeedY + dom.offsetTop;
+            let newLeft = iSpeedX + dom.offsetLeft;
+            console.log(newTop, newLeft);
+            if (newTop >= document.documentElement.clientHeight - dom.clientHeight) {
+                iSpeedY *= -0.8;
+                iSpeedX *= 0.8;
+                newTop = document.documentElement.clientHeight - dom.clientHeight;
+            }
+            if (newTop <= 0) {
+                iSpeedY *= -0.8;
+                iSpeedX *= 0.8;
+            }
+            if (newLeft >= document.documentElement.clientWidth - dom.clientWidth) {
+                iSpeedX *= -0.8;
+                iSpeedY *= 0.8;
+                newLeft = document.documentElement.clientWidth - dom.clientWidth;
+            }
+            if (newLeft <= 0) {
+                iSpeedX *= -0.8;
+                iSpeedY *= 0.8;
+
+            }
+            if (Math.abs(iSpeedX) < 1) {
+                iSpeedX = 0;
+            }
+            if (Math.abs(iSpeedY) < 1) {
+                iSpeedY = 0;
+            }
+            if(iSpeedX===0&&iSpeedY===0&&newTop===document.documentElement.clientHeight){
+                clearInterval(dom.timer);
+            }else{
+                dom.style.top = newTop + 'px';
+                dom.style.left = newLeft + 'px';
+            }
+        }, 30)
+    }
+</script>
 </body>
 </html>

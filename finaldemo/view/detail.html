@@ -1,0 +1,39 @@
+
+<div ng-controller="detailController" style="width: 100%;">
+    <div ng-hide="hideLoad">
+        <div class="waiting">
+            <ul>
+                <Li></Li>
+                <Li></Li>
+                <Li></Li>
+            </ul>
+        </div>
+    </div>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="detail" style="width:100%;height:200px;" >
+    </div>
+    <div ng-show="hideLoad">
+        <table class="ui celled table" style="text-align: center;">
+            <thead>
+            <tr>
+                <th class="four wide">日期</th>
+                <th>数据</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="mData in massData  | filter:selectedData | limitTo:listPerPage:(currentPage-1)*listPerPage">
+                <td>{{mData.fields["@timestamp"][0].substring(0,10)+
+                    " "+mData.fields["@timestamp"][0].substring(11,19)}}
+                </td>
+                <td>{{mData._source.kubernetes}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+        <ng-page current-page="currentPage" list-per-page="listPerPage" t-num="{{tNum}}" ng-show="hideLoad"></ng-page>
+    </div>
+    </div>
+</div>
+
+

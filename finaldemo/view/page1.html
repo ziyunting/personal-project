@@ -1,0 +1,7 @@
+<form class="ui form">
+    <input type="text" ng-change="changeKeyValue(textValue)" ng-model="textValue" ng-click="test()" placeholder="学校">
+    <div ng-hide="hide">
+        <select ng-change="change(x)" ng-model="x" ng-options="sch.name as sch.name for sch in infos" multiple>
+        </select>
+    </div>
+</form>

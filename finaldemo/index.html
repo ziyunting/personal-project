@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>个人页面</title>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/echarts/3.3.2/echarts.js"></script>
+    <script type="text/javascript" src="http://gallery.echartsjs.com/dep/echarts/map/js/china.js"></script>
+    <link rel="stylesheet" href="style/Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" href="style/page.css">
+
+</head>
+
+<body>
+<!--头部导航栏-->
+<div class="ui attached stackable menu" style="background-color: #cdcab9    ">
+    <div class="ui container">
+        <a class="item">
+            <i class="home icon"></i>Home
+        </a>
+        <a class="item">
+            <i class="grid layout icon"></i> Browse
+        </a>
+        <a class="item">
+            <i class="mail icon"></i> Messages
+        </a>
+        <div class="ui simple dropdown item">
+            More
+        </div>
+        <div class="right item">
+            <div class="ui input"><input type="text" placeholder="Search..."></div>
+        </div>
+    </div>
+</div>
+
+<div class="flex-container" style="margin-top:10px ">
+    <div class="flex-item1">
+        <div class="ui vertical menu" style="background-color: #cdcab9">
+            <a class="item" ui-sref="home"><i class="home icon"></i>首页</a>
+            <a class="item" ui-sref="list"><i class="table icon"></i>列表</a>
+            <a class="item" ui-sref="detail"><i class="tasks icon"></i>柱状图</a>
+            <a class="item" ui-sref="brokenLine"><i class="sliders horizontal icon"></i>折线图</a>
+            <a class="item" ui-sref="cake"><i class="database icon"></i>饼图</a>
+            <a class="item" ui-sref="spot"><i class="tags icon"></i>散点图</a>
+            <a class="item" ui-sref="map"><i class="map icon"></i>散点地图</a>
+            <a class="item" ui-sref="hotMap"><i class="map icon"></i>热力地图</a>
+            <a class="item" ui-sref="hot"><i class="bookmark icon"></i>热力图</a>
+            <a class="item" ui-sref="relation"><i class="plus icon"></i>关系图</a>
+        </div>
+    </div>
+    <div class="flex-item2">
+        <div class="ui segment">
+            <div ui-view=""></div>
+        </div>
+    </div>
+</div>
+<script src="style/Semantic-UI-CSS-master/semantic.min.js"></script>
+<script src="script/lib/angular.js"></script>
+<script src="script/lib/angular-ui-router.min.js"></script>
+<script src="https://cdn.bootcss.com/oclazyload/1.1.0/ocLazyLoad.min.js"></script>
+<script src="script/app.js"></script>
+<script src="script/Util.js"></script>
+<script src="script/directive/directive.js"></script>
+<script src="script/filter/filter.js"></script>
+<script>
+
+</script>
+
+</body>
+</html>

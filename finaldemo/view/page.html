@@ -1,0 +1,20 @@
+<div style="float: right;">
+    <div class="ui form " style="margin-right:0px;">
+        <div style="display: inline-block;">
+            <span>每页</span>
+            <div class="eleven wide field" style="display: inline-block">
+                <select ng-model="listPerPage" ng-options="x for x in pageArr" ></select>
+            </div>
+
+        </div>
+
+        <div class="ui buttons" style="margin:0 auto;" style="display: inline-block; ">
+            <button class="ui button" ng-click="setPage(currentPage-1)" ><a  style="font-size:13px;">&laquo;</a></button>
+            <button class="ui button" ng-class="{active: num == currentPage}" ng-repeat="num in pageNums track by $index"
+                    style="font-size:14px;" ng-click="setPage(num)">
+                <a >{{num}}</a></button>
+            <button class="ui button" ng-click="setPage(currentPage+1)"><a  style="font-size:13px;">&raquo;</a></button>
+        </div>
+
+    </div>
+</div>

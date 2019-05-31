@@ -1,0 +1,109 @@
+<div ng-controller="listCtr">
+    <div class=" ui segment" ng-show="mainCtr.isAction" style="min-width: 1000px;" id="eaDiv">
+        <h3> {{mainCtr.actionType === 'add'?'添加':'编辑'}}学生信息</h3>
+
+        <form name="addStuInfo" class="ui form" novalidate>
+            <div class="fifteen wide fields">
+                <div class="three wide field">
+                    <input type="text" name="name" ng-model="editStu.name" placeholder="姓名" required >
+                </div>
+
+                <div class="field" style="line-height:40px;">
+                    <label>性别：</label>
+                </div>
+
+                <div class="field" style="line-height:40px;">
+                    <div class="ui radio checkbox">
+                        <input type="radio" name="sex" ng-model="editStu.sex" value="0" id="sex-0">
+                        <label for="sex-0">男</label>
+                    </div>
+                </div>
+
+                <div class="field" style="line-height:40px;">
+                    <div class="ui radio checkbox">
+                        <input type="radio"  name="sex"  ng-model="editStu.sex" value="1" id="sex-1">
+                        <label for="sex-1">女</label>
+
+
+                    </div>
+                </div>
+
+                <div class="three wide field">
+                    <input type="number" name="age" min="10" max="30" ng-model="editStu.age" placeholder="年龄" required >
+
+                </div>
+
+                <div class=" three wide field">
+
+                    <select ng-model="editStu.school" ng-options="sch.code as sch.name for sch in schoolList" ></select>
+                    <!--<search-select infos="schoolList" text-value="editStu.school" ></search-select>-->
+
+                </div>
+
+            </div>
+
+            <button type="submit" ng-click="mainCtr.saveInfo()" class="ui primary button"
+                    ng-disabled="addStuInfo.name.$invalid || addStuInfo.age.$invalid">保存
+            </button>
+            <button ng-click="mainCtr.resetInfo()" class="ui button">重置</button>
+            <button ng-click="mainCtr.hideActionWindow()" class="ui button">取消</button>
+
+
+        </form>
+    </div>
+    <div style="margin-top:15px">
+        <button class="ui button" ng-click="mainCtr.showActionWindow('add')" ng-disabled="mainCtr.isAction">添加
+        </button>
+        <button class="ui button" ng-disabled="checkedList.length !== 1 || mainCtr.isAction"
+                ng-click="mainCtr.showActionWindow('edit')">编辑
+        </button>
+        <button class="ui button" ng-disabled="checkedList.length < 1 || mainCtr.isAction"
+                ng-click="mainCtr.delInfo()">删除
+        </button>
+        <div class="ui input"><input type="text" ng-model="searchName" placeholder="请输入你想搜索的名字">
+        </div>
+    </div>
+    <div>
+        <table class="ui celled table" style="text-align: center;">
+            <thead>
+            <tr>
+                <th><input type="checkbox" ng_click="mainCtr.select($event)"
+                           ng-checked="studentList.length === checkedList.length && studentList.length != 0">全选
+                </th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄<span class="triangle top" ng-click="isUpOrder=false"></span>
+                    <span class="triangle bottom" ng-click="isUpOrder=true"></span></th>
+                <th>学校</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat=" stu in studentList  | filter:searchName | orderBy:'age':isUpOrder track by stu.id ">
+                <td><input type="checkbox" ng-checked="checkedList.indexOf1(stu.id) > -1"
+                           ng-click="mainCtr.select($event,stu.id)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td ng-bind-html="stu.name | highLight:searchName"></td>
+                <td>{{stu.sex===0?'男':'女'}}</td>
+                <td>{{stu.age}}</td>
+                <td>{{stu.schoolName}}</td>
+                <td>
+                    <button ng-click="mainCtr.showActionWindow('edit',stu)" name="checkedList"
+                            ng-disabled="mainCtr.isAction" class=" mini ui button">
+                        编辑
+                    </button>
+                    <button ng-click="mainCtr.delInfo(stu.id)" ng-disabled="mainCtr.isAction" class=" mini ui button">
+                        删除
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+</div>
+
+

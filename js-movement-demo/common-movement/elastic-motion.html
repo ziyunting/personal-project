@@ -2,9 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>弹性运动</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: orange;
+        }
+
+        span {
+            position: absolute;
+            left: 300px;
+            top: 0;
+            background: #000;
+            width: 1px;
+            height: 100px;
+
+        }
+    </style>
 </head>
 <body>
-$END$
+<div></div>
+<span></span>
+<script>
+    let oDiv = document.getElementsByTagName('div')[0];
+    let timer = null;
+    oDiv.onclick = function () {
+        startMove(this, 300);
+    };
+
+    function startMove(dom, target) {
+        clearInterval(timer);
+        let _a = 3;
+        let _iSpeed = 0;
+        let _u = 0.9;
+        timer = setInterval(function () {
+            _a = (target - dom.offsetLeft) / 5;
+            _iSpeed += _a;
+            _iSpeed *= _u;
+            if (Math.abs(_iSpeed) < 1 && Math.abs(target - dom.offset) < 1) {
+                clearInterval(timer);
+                dom.style.left = target + 'px'
+            } else {
+                dom.style.left = _iSpeed + dom.offsetLeft + 'px';
+            }
+        }, 30)
+    }
+</script>
 </body>
 </html>

@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        div {
+            position: absolute;
+            left:600px;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: orange;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div></div>
+<script>
+    //加速运动
+    let oDiv = document.getElementsByTagName('div')[0];
+    let timer = null;
+    oDiv.onclick = function () {
+        startMove(this);
+    };
+
+    function startMove(dom) {
+        clearInterval(timer);
+        let a = -2;
+        let iSpeed = 20;
+        timer = setInterval(function () {
+            iSpeed = iSpeed + a;
+            dom.style.left = dom.offsetLeft + iSpeed + 'px';
+        }, 30)
+    }
+</script>
 </body>
 </html>

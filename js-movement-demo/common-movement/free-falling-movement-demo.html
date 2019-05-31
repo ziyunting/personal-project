@@ -2,9 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>拖拽实例</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: orange;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div></div>
+<script>
+    oDiv = document.getElementsByTagName('div')[0];
+    let lastX = 0;
+    let lastY = 0;
+    let iSpeedX = 0;
+    let iSpeedY = 0;
+    oDiv.onmousedown = function (e) {
+        clearInterval(this.timer);
+        var event = event || e;
+        let disX = event.clientX - this.offsetLeft;
+        let disY = event.clientY - this.offsetTop;
+        let self = this;
+        document.onmousemove = function (e) {
+            var event = event || e;
+            let newLeft = event.clientX - disX;
+            let newTop = event.clientY - disY;
+            iSpeedX = newLeft - lastX;
+            iSpeedY = newTop - lastY;
+            lastX = newLeft;
+            lastY = newTop;
+            // let oSpan = document.createElement('span');
+            // oSpan.style.position = 'absolute';
+            // oSpan.style.left = newLeft + 'px';
+            // oSpan.style.top = newTop + 'px';
+            // oSpan.style.width = '5px';
+            // oSpan.style.height = '5px';
+            // oSpan.style.backgroundColor = 'black';
+            // document.body.appendChild(oSpan);
+
+            self.style.left = newLeft + 'px';
+            self.style.top = newTop + 'px';
+        };
+        document.onmouseup = function () {
+            document.onmouseup = null;
+            document.onmousemove = null;
+            startMove(self, iSpeedX, iSpeedX);
+        }
+    };
+
+    function startMove(dom, iSpeedX, iSpeedY) {
+        clearInterval(dom.timer);
+        let g = 9.8;
+        dom.timer = setInterval(function () {
+            iSpeedY += g;
+            let newTop = iSpeedY + dom.offsetTop;
+            let newLeft = iSpeedX + dom.offsetLeft;
+            if (newTop >= document.documentElement.clientHeight - dom.clientHeight) {
+                iSpeedY *= -0.8;
+                iSpeedX *= 0.8;
+                newTop = document.documentElement.clientHeight - dom.clientHeight;
+            }
+            if (newTop <= 0) {
+                iSpeedY *= -0.8;
+                iSpeedX *= 0.8;
+            }
+            if (newLeft >= document.documentElement.clientWidth - dom.clientWidth) {
+                iSpeedX *= -0.8;
+                iSpeedY *= 0.8;
+                newLeft = document.documentElement.clientWidth - dom.clientWidth;
+            }
+            if (newLeft <= 0) {
+                iSpeedX *= -0.8;
+                iSpeedY *= 0.8;
+
+            }
+            if (Math.abs(iSpeedX) < 1) {
+                iSpeedX = 0;
+            }
+            if (Math.abs(iSpeedY) < 1) {
+                iSpeedY = 0;
+            }
+            if (iSpeedX === 0 && iSpeedY === 0 && newTop === document.documentElement.clientHeight) {
+                clearInterval(dom.timer);
+            } else {
+                dom.style.top = newTop + 'px';
+                dom.style.left = newLeft + 'px';
+            }
+        }, 30)
+    }
+</script>
 </body>
 </html>

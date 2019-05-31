@@ -1,0 +1,155 @@
+
+html {
+    height: 100%;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+}
+
+.flex-item1 {
+    width: 250px;
+}
+
+.flex-item2 {
+    width: 85%;
+}
+
+/* css3样式，用于页面的弹出*/
+#eaDiv {
+    position: relative;
+    animation: mymove 0.8s;
+    -webkit-animation: mymove 0.8s; /* Safari and Chrome */
+    animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+    from {
+        top: -600px;
+    }
+    to {
+        top: 0px;
+    }
+}
+
+@-webkit-keyframes mymove /* Safari and Chrome */
+{
+    from {
+        top: -600px;
+    }
+    to {
+        top: 0px;
+    }
+}
+
+/*自定义的两个小三角，在排序中用到的*/
+.triangle.top {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: grey;
+    line-height: 32px;
+}
+
+.triangle.bottom {
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border: 5px solid transparent;
+    border-top-color: grey;
+    line-height: 32px;
+
+}
+
+/*高亮显示的样式*/
+.highlightedText {
+    background-color: #ffaf93;
+}
+
+/*loading加载的画面代码*/
+.waiting {
+    position: relative;
+    width: 69px;
+    height: 35px;
+    line-height: 35px;
+    background: #E4F1FD;
+    border-radius: 20px;
+    /*margin-top: 15px;*/
+    /*margin-left: 15px;*/
+    margin: 0 auto;
+    margin-top: 100px;
+    color: #FFAF32;
+}
+
+/*这个是每个点的自己的块*/
+.waiting li {
+    position: absolute;
+    top: 13px;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    list-style: none;
+    -webkit-animation: bounce_waiting 1.2s linear infinite;
+    -webkit-transform: scale(0);
+    -webkit-border-radius: 5px;
+    animation: bounce_waiting 1.2s linear infinite;
+    transform: scale(0);
+    border-radius: 5px;
+}
+
+.waiting li:first-child {
+    left: 15px;
+    -webkit-animation-delay: 0.48s;
+    animation-delay: .48s;
+}
+
+.waiting li:nth-child(2) {
+    left: 30px;
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+.waiting li:nth-child(3) {
+    left: 45px;
+    -webkit-animation-delay: 0.72s;
+    animation-delay: 0.72s;
+}
+
+/*定义动画函数，从1倍减小到0*/
+@-webkit-keyframes bounce_waiting {
+    0% {
+        -webkit-transform: scale(1);
+        background-color: #FFAF32;
+    }
+    100% {
+        -webkit-transform: scale(0);
+        background-color: #ffffff;
+    }
+}
+
+@keyframes bounce_waiting {
+    0% {
+        transform: scale(1);
+        background-color: #FFAF32;
+    }
+    100% {
+        transform: scale(0);
+        background-color: #ffffff;
+    }
+}
+
+.ng-touched.ng-{
+    border: 1px solid red!important;
+}
+
+
+
+
+
+
+
+
+

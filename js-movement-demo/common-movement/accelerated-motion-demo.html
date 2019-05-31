@@ -2,9 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>弹性运动实例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        ul {
+            position: absolute;
+            margin: 100px auto;
+            width: 800px;
+            height: 100px;
+        }
+
+        ul .ele {
+            float: left;
+            width: 198px;
+            border: 1px solid black;
+            background-color: orange;
+            height: 98px;
+            line-height: 98px;
+            text-align: center;
+        }
+
+        .bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+
+            height: 100px;
+            opacity: .4;
+            background-color: deeppink;
+        }
+    </style>
 </head>
 <body>
-$END$
+<ul>
+    <li class="ele">aaa</li>
+    <li class="ele">sss</li>
+    <li class="ele">ddd</li>
+    <li class="ele">fff</li>
+    <li class="bg"></li>
+</ul>
+<script>
+    let oLiArray = document.getElementsByTagName('li');
+    let timer = null;
+    let oLiBg = oLiArray[oLiArray.length - 1];
+    for (let i = 0; i < oLiArray.length - 1; i++) {
+        oLiArray[i].onmouseenter = function () {
+            startMove(oLiBg, this.offsetLeft);
+        }
+    }
+
+    function startMove(dom, target) {
+        clearInterval(timer);
+        let _a = 3;
+        let _iSpeed = 0;
+        let _u = 0.9;
+        timer = setInterval(function () {
+            _a = (target - dom.offsetLeft) / 5;
+            _iSpeed += _a;
+            _iSpeed *= _u;
+            if (Math.abs(_iSpeed) < 1 && Math.abs(target - dom.offset) < 1) {
+                clearInterval(timer);
+                dom.style.left = target + 'px'
+            } else {
+                dom.style.left = _iSpeed + dom.offsetLeft + 'px';
+            }
+        }, 30)
+    }
+</script>
 </body>
 </html>
