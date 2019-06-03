@@ -96,3 +96,19 @@ padding:20rpx;
     height:50rpx;
     margin-left:20rpx;
 }
+
+.article-handle button{
+    position: relative;
+bottom:8rpx;
+    width:50rpx;
+    height:50rpx;
+    padding:0;
+    background-color:transparent;
+    margin-left:20rpx;
+}
+.article-handle button::after{
+    border:none;
+}
+.article-handle button image{
+    margin-left:0rpx;
+}

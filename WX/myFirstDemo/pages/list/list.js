@@ -10,7 +10,14 @@ Page({
         imgSrc: "/image/list/recommend-image.png"
     },
     test() {
-        console.log("success");
+        wx.showActionSheet({
+            itemList: ["内容过期了",'内容和深度阅读不相关','不再显示来自深度阅读的内容'],
+            success:res => {
+
+
+
+            }
+        })
     },
     /**
      * 生命周期函数--监听页面加载
@@ -23,19 +30,7 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-        wx.showToast({
-            title:"标题",
-            icon:"loading",
-            // image:"/image/list/article/icon/Icon_circle.png",
-            // duration:5000,
-            mask:true,
-            success:function(res){
-                console.log(res);
-            },
-            // fail:function(res){
-            //     console.log(res);
-            // }
-        })
+
     },
 
     /**

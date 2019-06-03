@@ -1,6 +1,8 @@
 <!--pages/list/list.wxml-->
 <!--<text>pages/list/list.wxml</text>-->
 
+<button open-type="share">点击分享</button>
+
 <view class="container">
     <!--推荐-->
     <view class="recommend-container">
@@ -48,10 +50,12 @@
                 </view>
                 <view class="article-handle">
                     <view>
-                        <image src="/image/list/article/icon/icon_more.png" mode="widthFix"></image>
+                        <image src="/image/list/article/icon/icon_more.png" mode="widthFix" data-articleType="{{}}" bind:tap="test"></image>
                     </view>
                     <view>
-                        <image src="/image/list/article/icon/icon_relay.png"></image>
+                        <button open-type="share">
+                            <image src="/image/list/article/icon/icon_relay.png"></image>
+                        </button>
                     </view>
                     <view>
                         <image src="/image/list/article/icon/icon_circle.png"></image>
