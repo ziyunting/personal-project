@@ -1,15 +1,13 @@
 <!--pages/list/list.wxml-->
 <!--<text>pages/list/list.wxml</text>-->
 
-<button open-type="share">点击分享</button>
-
 <view class="container">
     <!--推荐-->
     <view class="recommend-container">
     <view class="recommend-article">
-    <text class="date">{{date}}</text>
-    <text class="recommend-title">{{title}}</text>
-    <image class="recommend-cover" src="{{imgSrc}}" mode="widthFix"></image>
+    <text class="date">{{recommend.date}}</text>
+    <text class="recommend-title">{{recommend.title}}</text>
+    <image class="recommend-cover" src="{{recommend.imgSrc}}" mode="widthFix"></image>
     </view>
     <view class="recommend-box">
     <text bind:tap="test">+</text>

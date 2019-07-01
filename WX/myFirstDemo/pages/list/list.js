@@ -5,9 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        date: "十月七日",
-        title: "点评人荐文：居安思危的前瞻性",
-        imgSrc: "/image/list/recommend-image.png"
+    
     },
     test() {
         wx.showActionSheet({
@@ -23,7 +21,17 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      wx.request({
+        url: 'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/home',
+        success:res=>{
+          console.log(res.data);
+          this.setData({
+            recommend: res.data.recommend,
+          })
+        }
+          
+        
+      })
     },
 
     /**
