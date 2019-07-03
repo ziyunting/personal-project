@@ -54,7 +54,7 @@ padding:0 25px;
 .per-article{
     background-color:#fff;
     padding-bottom:30rpx;
-    /*margin-bottom:30rpx;*/
+    margin-bottom:30rpx;
 }
 .article-head{
 padding:20rpx;
