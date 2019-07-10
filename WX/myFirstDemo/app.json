@@ -3,5 +3,6 @@
     "pages/list/list",
     "pages/index/index",
     "pages/inside/inside"
-  ]
+  ],
+  "sitemapLocation": "sitemap91.json"
 }

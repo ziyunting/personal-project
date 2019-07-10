@@ -5,30 +5,58 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    listLike: {
+      0: true,
+      1: false,
+      2: false,
+      3: true
+    }
   },
-  test() {
+  showList(e) {
+    let type = e.currentTarget.dataset.articletype;
     wx.showActionSheet({
-      itemList: ["内容过期了", '内容和深度阅读不相关', '不再显示来自深度阅读的内容'],
+      itemList: ["内容过期了", '内容和' + type + '不相关', '不再显示来自' + type + '的内容'],
       success: res => {
 
-
+        console.log(res.tapIndex)
 
       }
     })
+  },
+  onLikeTap: function(e) {
+    var index = e.currentTarget.dataset.articleindex
+    var listLike = this.data.listLike;
+    var isLike = listLike[index];
+    listLike[index] = !isLike;
+    this.setData({
+      listLike:listLike
+    });
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     this.getHomeData();
+    wx.setStorageSync(
+       "listLike", {
+        0: true,
+        1: false,
+        2: false,
+        3: true
+      
+    });
+    wx.getStorage({
+      key: 'key',
+      success: function(res) {
+        this
+      },
+    })
   },
 
-  getHomeData : function() {
+  getHomeData: function() {
     wx.request({
       url: 'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/home',
       success: res => {
-        console.log(res.data);
         this.setData({
           recommend: res.data.recommend,
           markType: res.data.markType,

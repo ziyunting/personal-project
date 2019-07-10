@@ -13,7 +13,7 @@
       <image class="recommend-cover" src="{{recommend.imgSrc}}" mode="widthFix"></image>
     </view>
     <view class="recommend-box">
-      <text bind:tap="test">+</text>
+      <text bind:tap="">+</text>
       <text wx:for="{{markType}}" wx:key="">{{item.type}}</text>
       <text>···</text>
     </view>
@@ -43,7 +43,7 @@
         </view>
         <view class="article-handle">
           <view>
-            <image src="/image/list/article/icon/icon_more.png" mode="widthFix" data-articleType="{{}}" bind:tap="test"></image>
+            <image src="/image/list/article/icon/icon_more.png" mode="widthFix" data-articleType="{{item.articleType}}" bind:tap="showList"></image>
           </view>
           <view>
             <button open-type="share">
@@ -51,7 +51,8 @@
             </button>
           </view>
           <view>
-            <image src="/image/list/article/icon/icon_circle.png"></image>
+            <image wx:if="{{listLike[index]}}" src="/image/list/article/icon/icon_circle_fill.png" bind:tap="onLikeTap" data-ArticleIndex="{{index}}"></image>
+            <image wx:else src="/image/list/article/icon/icon_circle.png" bind:tap="onLikeTap" data-ArticleIndex="{{index}}"></image>
           </view>
         </view>
       </view>
