@@ -5,12 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listLike: {
-      0: true,
-      1: false,
-      2: false,
-      3: true
-    }
+
   },
   showList(e) {
     let type = e.currentTarget.dataset.articletype;
@@ -29,28 +24,29 @@ Page({
     var isLike = listLike[index];
     listLike[index] = !isLike;
     this.setData({
-      listLike:listLike
+      listLike: listLike
     });
+    wx.setStorageSync("listLike", listLike)
+  },
+  getLikeData() {
+    let listLikeStorage = wx.getStorageSync('listLike') || {};
+    this.setData({
+      listLike: listLikeStorage
+    })
+  },
+  onArticleTap(e) {
+    let typeId = e.currentTarget.dataset.articletypeid;
+    console.log(typeId)
+    wx.navigateTo({
+      url: '/pages/type/type?typeId='+typeId,
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     this.getHomeData();
-    wx.setStorageSync(
-       "listLike", {
-        0: true,
-        1: false,
-        2: false,
-        3: true
-      
-    });
-    wx.getStorage({
-      key: 'key',
-      success: function(res) {
-        this
-      },
-    })
+    this.getLikeData();
   },
 
   getHomeData: function() {

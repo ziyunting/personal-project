@@ -14,7 +14,7 @@
     </view>
     <view class="recommend-box">
       <text bind:tap="">+</text>
-      <text wx:for="{{markType}}" wx:key="">{{item.type}}</text>
+      <text wx:for="{{markType}}" wx:key="" bind:tap="onArticleTap" data-articleTypeId="{{item.typeId}}">{{item.type}}</text>
       <text>···</text>
     </view>
   </view>
