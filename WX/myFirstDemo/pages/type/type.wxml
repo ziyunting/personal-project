@@ -14,7 +14,7 @@
         </view>
     </view>
     <view class="recommend-list-container">
-        <view class="per-article" wx:for="{{articleList}}" wx:key="">
+        <view class="per-article" wx:for="{{articleList}}" wx:key="" bind:tap="onArticleDetail" data-articleId="{{item.id}}">
             <view class="article-head">
                 <image src="{{item.markPeopleAvatar}}"></image>
                 <text>{{item.markPeople}}</text>

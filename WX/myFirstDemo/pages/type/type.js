@@ -22,10 +22,6 @@ Page({
         that.setData({
           titleInfo: res,
         });
-        setTimeout(function() {
-          console.log(that.data)
-        }, 1000)
-
       }
     });
     request({
@@ -34,14 +30,15 @@ Page({
         that.setData({
           articleList: res,
         })
-        setTimeout(function() {
-          console.log(this.articleList)
-        }, 5000)
-
       }
     })
   },
-
+    onArticleDetail(e){
+   let id= e.currentTarget.dataset.articleid
+    wx.navigateTo({
+      url: '/pages/articleDetail/articleDetail?id='+id
+    })
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

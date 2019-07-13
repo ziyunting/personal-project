@@ -1,3 +1,39 @@
 <!--pages/articleDetail/articleDetail.wxml-->
 <view class="container">
+  <view class="title-container">
+    <text>{{articleDetail.title}}</text>
+  </view>
+  <view class="authorAndDate">
+    <text>{{articleDetail.author}}</text>
+    <text>{{articleDetail.publishTime}}</text>
+  </view>
+  <view class="media-container">
+    <!-- <swiper autoplay="{{true}}" interval="3000" indicator-dots="{{true}}" class="banner">
+            <swiper-item wx:for="{{articleDetail.banner}}">
+                <image src="{{item}}"></image>
+            </swiper-item>
+
+        </swiper> -->
+    <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400">
+    </video>
+  </view>
+  <view class="content-container">
+    <text decode="{{true}}">{{filter(articleDetail.content)}}</text>
+  </view>
+  <view class="read-container">
+    <text>阅读</text>
+    <text>{{articleDetail.readNum}}</text>
+  </view>
 </view>
+
+<wxs module="filter">
+  var filter = function(text) {
+    if (!text) {
+      return
+    } else {
+      var reg = getRegExp("\\n", 'g');
+      return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+    }
+  }
+  module.exports = filter
+</wxs>
