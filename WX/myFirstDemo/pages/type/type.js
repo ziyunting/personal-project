@@ -1,4 +1,6 @@
 // pages/type/type.js
+let request = require('../utils/request.js');
+
 Page({
 
   /**
@@ -7,16 +9,35 @@ Page({
   data: {
 
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let typeId=options.typeId;
-    wx.request({
-      url: 'https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getArticleTypeTitleInfo/'+typeId,
-      success:function(res){
-        console.log(res)
+    let typeId = options.typeId;
+    let that = this;
+    request({
+      url: 'getArticleTypeTitleInfo/' + typeId,
+      success: function(res) {
+        console.log(res);
+        that.setData({
+          titleInfo: res,
+        });
+        setTimeout(function() {
+          console.log(that.data)
+        }, 1000)
+
+      }
+    });
+    request({
+      url: 'getArticleTypeList/' + typeId,
+      success: function(res) {
+        that.setData({
+          articleList: res,
+        })
+        setTimeout(function() {
+          console.log(this.articleList)
+        }, 5000)
+
       }
     })
   },

@@ -1,1 +1,43 @@
 /* pages/type/type.wxss */
+@import "../common-list.wxss";
+
+.title-container {
+  position: relative;
+  /* margin-bottom:100rpx; */
+}
+
+image.title-cover {
+  width: 750rpx;
+  height: 500rpx;
+}
+
+
+
+.title-box {
+  box-sizing: border-box;
+  position: absolute;
+  left: 45rpx;
+  bottom: -80rpx;
+  width: 660rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.title {
+  font-size: 54rpx;
+}
+
+.title-handle {
+  text-align: right;
+  margin-top: 10rpx;
+}
+
+.title-handle image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+}
+
+.recommend-list-container {
+  padding-top: 100rpx;
+}

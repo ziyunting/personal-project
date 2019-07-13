@@ -12,9 +12,6 @@ Page({
     wx.showActionSheet({
       itemList: ["内容过期了", '内容和' + type + '不相关', '不再显示来自' + type + '的内容'],
       success: res => {
-
-        console.log(res.tapIndex)
-
       }
     })
   },
@@ -36,7 +33,6 @@ Page({
   },
   onArticleTap(e) {
     let typeId = e.currentTarget.dataset.articletypeid;
-    console.log(typeId)
     wx.navigateTo({
       url: '/pages/type/type?typeId='+typeId,
     })
