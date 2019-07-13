@@ -12,6 +12,7 @@ padding:0 25px;
     font-size:52rpx;
     letter-spacing:10rpx;
     position: relative;
+    padding-bottom:24rpx;
     margin-top:20rpx;
 }
 .date::after{
@@ -25,6 +26,7 @@ padding:0 25px;
     background-color:#999;
 }
 .recommend-title{
+  margin-top:20rpx;
     font-size: 28rpx;
     text-align:center;
     line-height:56rpx;
