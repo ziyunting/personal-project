@@ -1,0 +1,113 @@
+/* pages/articleDetail/articleDetail.wxss */
+.container{
+    margin-top:20rpx;
+    padding:10rpx;
+}
+.title-container text{
+    font-size: 48rpx;
+}
+.authorAndDate{
+    margin-top:20rpx;
+}
+.authorAndDate text{
+    font-size:28rpx;
+    color:#666;
+    margin-right:20rpx;
+}
+.authorAndDate text:first-of-type{
+    color:#576b95;
+}
+.content-container{
+    margin-top:30rpx;
+    text-indent:2em;
+}
+.content-container text{
+    font-size:16px;
+    line-height:32px;
+}
+.read-container{
+    margin-top:30rpx;
+    margin-bottom:30rpx;
+}
+.read-container text{
+    font-size:14px;
+    margin-right:20rpx;
+}
+.banner{
+    width:750rpx;
+    height:500rpx;
+}
+.banner image{
+    width:100%;
+    height:100%;
+}
+.media-container{
+    display: flex;
+    justify-content: center;
+}
+.media-container video{
+    width:700rpx;
+    height:500rpx;
+}
+.controls{
+  position:relative;
+  width:700rpx;
+  height:500rpx;
+  background-color:red;
+}
+.controls-box{
+position:absolute;
+top:50%;
+left:50%;
+width:100rpx;
+height:100rpx;
+margin-top:-50rpx;
+margin-left:-50rpx;
+}
+.audio-container{
+    display:flex;
+    align-items: center;
+    padding:30rpx;
+    margin-left:20rpx;
+    margin-right:20rpx;
+    background-color:#fdfdfd;
+    border:1px solid #f2f2f2;
+    border-radius:4rpx;
+}
+.audio-controller{
+    margin-right:40rpx;
+}
+.audio-controller image{
+    width:80rpx;
+    height:80rpx;
+}
+.audio-title text{
+    font-size:36rpx;
+}
+.audio-form text{
+   font-size:28rpx;
+    color:#666;
+}
+.audio-progress{
+    position:relative;
+    margin-top:20rpx;
+    margin-bottom:20rpx;
+    width:520rpx;
+}
+.progress-circle{
+    position:absolute;
+    top:50%;
+    margin-top:-10rpx;
+    width:20rpx;
+    height:20rpx;
+    border-radius:50%;
+    background-color:#00b26a;
+}
+.audio-item{
+    display:flex;
+    justify-content: space-between;
+}
+.audio-item text{
+    color:#666;
+    font-size:24rpx;
+}

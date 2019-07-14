@@ -2,6 +2,9 @@
   "pages": [
     "pages/list/list",
     "pages/index/index",
-    "pages/inside/inside"
-  ]
+    "pages/inside/inside",
+    "pages/type/type",
+    "pages/articleDetail/articleDetail"
+  ],
+  "sitemapLocation": "sitemap91.json"
 }

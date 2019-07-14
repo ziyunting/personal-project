@@ -1,0 +1,57 @@
+<!--pages/articleDetail/articleDetail.wxml-->
+<wxs src="../utils/filter.wxs" module="filter"></wxs>
+<view class="container">
+    <view class="title-container">
+        <text>{{articleDetail.title}}</text>
+    </view>
+    <view class="authorAndDate">
+        <text>{{articleDetail.author}}</text>
+        <text>{{articleDetail.publishTime}}</text>
+    </view>
+    <view class="media-container">
+        <!-- <swiper autoplay="{{true}}" interval="3000" indicator-dots="{{true}}" class="banner">
+                <swiper-item wx:for="{{articleDetail.banner}}">
+                    <image src="{{item}}"></image>
+                </swiper-item>
+
+            </swiper> -->
+        <!--<video initial-time="10" duration="30" enable-danmu='true' danmu-btn='true' controls="true" id="myVideo" poster='https://www.baidu.com/img/bd_logo1.png' src="{{articleDetail.video.src}}">-->
+        <!--<cover-view class="controls" bind:tap="hiddenCover" wx:if="{{coverHidden}}">-->
+        <!--<cover-image src="{{articleDetail.video.poster}}"></cover-image>-->
+        <!--<cover-view class="controls-box">-->
+        <!--<cover-image src="/image/list/article/icon/Icon_circle.png"></cover-image>-->
+        <!--<cover-view>10''</cover-view>-->
+        <!--</cover-view>-->
+        <!--</cover-view>-->
+        <!--</video>-->
+        <view class="audio-container">
+            <view class="audio-controller" >
+            <image src="/image/icon/Icon_pause.png" bind:tap="onAudioPlayTap" wx:if="{{playing}}"></image>
+                <image src="/image/icon/Icon_play.png" bind:tap="onAudioPlayTap" wx:else></image>
+            </view>
+            <view class="audio-info">
+                <view class="audio-title">
+                    <text>人生呐，只有吃不可靠</text>
+                </view>
+                <view class="audio-form">
+                    <text>来自单向书街</text>
+                </view>
+                <view class="audio-progress">
+                    <progress percent="60"/>
+                    <view class="progress-circle"></view>
+                </view>
+                <view class="audio-item">
+                    <text>00:00</text>
+                    <text>06:41</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="content-container">
+        <text decode="{{true}}">{{filter(articleDetail.content)}}</text>
+    </view>
+    <view class="read-container">
+        <text>阅读</text>
+        <text>{{articleDetail.readNum}}</text>
+    </view>
+</view>
