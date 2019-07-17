@@ -61,7 +61,7 @@
 					"id": 1,
 					"name": "文章详情",
 					"pathName": "pages/articleDetail/articleDetail",
-					"query": "id=11",
+					"query": "id=10",
 					"scene": null
 				}
 			]

@@ -6,5 +6,6 @@
     "pages/type/type",
     "pages/articleDetail/articleDetail"
   ],
-  "sitemapLocation": "sitemap91.json"
+  "sitemapLocation": "sitemap91.json",
+  "requiredBackgroundModes":["audio"] 
 }
