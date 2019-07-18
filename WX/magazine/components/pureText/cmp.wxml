@@ -1,0 +1,5 @@
+<!--components/pureText/cmp.wxml-->
+<view class="container">
+  <view class="main-title">{{mainTitle}}你是人间的五月天</view>
+  <view class="sub-head">{{subHead}}我是你最美的梦想</view>
+</view>

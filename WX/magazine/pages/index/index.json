@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "z-bigImage": "/components/bigImage/cmp",
+    "z-pureText":"/components/pureText/cmp"
+  }
+}
