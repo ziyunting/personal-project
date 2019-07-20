@@ -1,12 +1,10 @@
-import {
-  Beh
-} from "../behavior/my-behavior.js"
+// components/video/cmp.js
 Component({
-  behaviors: [Beh],
   /**
    * 组件的属性列表
    */
   properties: {
+
   },
 
   /**

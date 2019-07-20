@@ -1,6 +1,9 @@
 {
   "usingComponents": {
     "z-bigImage": "/components/bigImage/cmp",
-    "z-pureText":"/components/pureText/cmp"
+    "z-pureText": "/components/pureText/cmp",
+    "z-imageText": "/components/imageText/cmp",
+    "z-nineImage": "/components/nineImage/cmp",
+    "z-video": "/components/video/cmp"
   }
 }

@@ -1,3 +1,7 @@
 <!--index.wxml-->
-<z-bigImage imageSrc="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1718395925,3485808025&fm=27&gp=0.jpg" mainTitle="愿你遍历山河，觉得人间值得"/>
-<z-pureText/>
+<!-- <z-bigImage imageSrc="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1718395925,3485808025&fm=27&gp=0.jpg" mainTitle="愿你遍历山河，觉得人间值得" /> -->
+<!-- <z-pureText/> -->
+<!-- <z-imageText main-title="人生需要尝试，需要最美的色彩" sub-head="迈开脚步" image-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1718395925,3485808025&fm=27&gp=0.jpg" />
+<z-bigImage image-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1718395925,3485808025&fm=27&gp=0.jpg"/> -->
+<!-- <z-nineImage /> -->
+<z-video />

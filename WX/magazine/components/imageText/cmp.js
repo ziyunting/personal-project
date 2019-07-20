@@ -1,6 +1,7 @@
 import {
   Beh
 } from "../behavior/my-behavior.js"
+// components/imageText/cmp.js
 Component({
   behaviors: [Beh],
   /**
