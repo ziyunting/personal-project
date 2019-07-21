@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="mark-container">
+    <image class="avater" src="https://pic.qqtn.com/up/2019-7/2019071608361860317.jpg"></image>
+    <text class="text">neffy等19人mark了</text>
+  </view>
+
+
+  <view>
+    <z-bigImage wx:if="{{type===0}}" imageSrc="{{}}" mainTitle="{{}}" />
+    <z-pureText wx:elif="{{type===1}}" mainTitle="{{}}" subHead="{{}}" />
+    <z-imageText wx:elif="{{type===2}}" mainTitle="{{}}" sub-head="{{}}" image-src="{{}}" />
+    <z-nineImage wx:elif="{{type===3}}" mainTitle="{{}}" imgArr="{{}}" />
+    <z-video wx:elif="{{type===4}}" mainTitle="{{}}" src="{{}}" duration="{{}}" poster="{{}}" video-id="{{}}" />
+  </view>
+  <view class="control-container">
+    <view>
+      <z-tag tag="{{'心理'}}" tagId="{{}}" />
+    </view>
+
+    <view class="control-box">
+      <z-more class="box" tag="{{}}" />
+      <z-like class="box" like="{{}}" />
+    </view>
+  </view>
+</view>

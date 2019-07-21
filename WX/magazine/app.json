@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "components/pureText/cmp"
+    "components/pureText/cmp",
+    "pages/type/type"
   ],
   "window": {
     "backgroundTextStyle": "light",
