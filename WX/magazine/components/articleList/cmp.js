@@ -1,13 +1,11 @@
-// components/pureText/cmp.js
+// components/articleList/cmp.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    mainTitle: String,
-    subHead: String
+    articleList: Array
   },
-
   /**
    * 组件的初始数据
    */

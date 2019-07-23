@@ -1,24 +1,24 @@
 <view class="container">
   <view class="mark-container">
-    <image class="avater" src="https://pic.qqtn.com/up/2019-7/2019071608361860317.jpg"></image>
-    <text class="text">neffy等19人mark了</text>
+    <image class="avater" src="{{articleDetail.mark.avatar}}"></image>
+    <text class="text">{{articleDetail.mark.people}}等{{articleDetail.mark.count}}人马克了</text>
   </view>
 
 
   <view>
-    <z-bigImage wx:if="{{type===0}}" imageSrc="{{}}" mainTitle="{{}}" />
-    <z-pureText wx:elif="{{type===1}}" mainTitle="{{}}" subHead="{{}}" />
-    <z-imageText wx:elif="{{type===2}}" mainTitle="{{}}" sub-head="{{}}" image-src="{{}}" />
-    <z-nineImage wx:elif="{{type===3}}" mainTitle="{{}}" imgArr="{{}}" />
-    <z-video wx:elif="{{type===4}}" mainTitle="{{}}" src="{{}}" duration="{{}}" poster="{{}}" video-id="{{}}" />
+    <z-bigImage wx:if="{{articleDetail.type==0}}" imageSrc="{{articleDetail.imgArray[0]}}" mainTitle="{{articleDetail.mainTitle}}" />
+    <z-pureText wx:elif="{{articleDetail.type==4}}" mainTitle="{{articleDetail.mainTitle}}" subHead="{{articleDetail.subHead}}" />
+    <z-imageText wx:elif="{{articleDetail.type==2}}" mainTitle="{{articleDetail.mainTitle}}" sub-head="{{articleDetail.subHead}}" image-src="{{articleDetail.imgArray[0]}}" />
+    <z-nineImage wx:elif="{{articleDetail.type==1}}" mainTitle="{{articleDetail.mainTitle}}" imgArr="{{articleDetail.imgArray}}" />
+    <z-video wx:elif="{{articleDetail.type==3}}" mainTitle="{{articleDetail.mainTitle}}" src="{{articleDetail.video.src}}" duration="{{articleDetail.video.duration}}" poster="{{articleDetail.video.poster}}" video-id="{{articleDetail.videoId}}" />
   </view>
   <view class="control-container">
     <view>
-      <z-tag tag="{{'心理'}}" tagId="{{}}" />
+      <z-tag tag="{{articleDetail.tag}}" tagId="{{articleDetail.tagId}}" />
     </view>
 
     <view class="control-box">
-      <z-more class="box" tag="{{}}" />
+      <z-more class="box" tag="{{articleDetail.tag}}" />
       <z-like class="box" like="{{}}" />
     </view>
   </view>

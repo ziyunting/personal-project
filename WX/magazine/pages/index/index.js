@@ -21,6 +21,7 @@ Page({
   },
   onLoad: function() {
     this.getData();
+    wx.showLoading();
   },
   getData() {
     const articleList = indexModel.getArticleList();
@@ -28,6 +29,13 @@ Page({
     const recommendList = indexModel.getRecommendInfo()
     Promise.all([articleList, markList, recommendList]).then(res => {
       console.log(res[0], res[1], res[2]);
+      this.setData({
+        articleList: res[0],
+        markList: res[1],
+        recommendList: res[2]
+      });
+      wx.hideLoading();
+
     })
   },
   getUserInfo: function(e) {

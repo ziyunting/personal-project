@@ -1,0 +1,9 @@
+.container {
+    background-color: rgba(0, 0, 0, .1);
+    padding: 25rpx;
+}
+
+.article {
+    display: block;
+    margin-top: 30rpx;
+}

@@ -1,0 +1,3 @@
+<view class="container">
+  <z-article article-detail="{{item}}" wx:for="{{articleList}}" wx:key="{{artId}}" class=" article" />
+</view>

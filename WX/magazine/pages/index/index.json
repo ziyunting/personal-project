@@ -1,13 +1,5 @@
 {
   "usingComponents": {
-    "z-bigImage": "/components/bigImage/cmp",
-    "z-pureText": "/components/pureText/cmp",
-    "z-imageText": "/components/imageText/cmp",
-    "z-nineImage": "/components/nineImage/cmp",
-    "z-video": "/components/video/cmp",
-    "z-tag": "/components/tag/cmp",
-    "z-more":"/components/more/cmp",
-    "z-like":"/components/like/cmp",
-    "z-article":"/components/article/cmp"
+    "z-articleList":"/components/articleList/cmp"
   }
 }

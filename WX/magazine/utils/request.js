@@ -8,7 +8,7 @@ class Request {
         data: data,
         success: res => {
           if (res.data.code == 0) {
-            resolve(res)
+            resolve(res.data.data)
           } else {
             this._showError();
           }

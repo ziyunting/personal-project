@@ -1,5 +1,9 @@
-.container{
-  padding:20rpx;
+.container {
+    background-color: #fff;
+}
+
+.mark-container {
+    padding: 20rpx;
 }
 .avater{
   width:60rpx;
