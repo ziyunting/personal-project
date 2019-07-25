@@ -4,14 +4,23 @@ const app = getApp()
 import {
   IndexModel
 } from "../../models/index.js"
+import {
+  random
+} from "../../utils/random.js"
 
 const indexModel = new IndexModel();
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    articleList: [],
+    markList: [],
+    recommendList: [],
+
+    getMore: {
+      type: String,
+      value: '',
+      observer(newVal) {
+      }
+    }
   },
   //事件处理函数
   bindViewTap: function() {
@@ -28,7 +37,6 @@ Page({
     const markList = indexModel.getMarkList();
     const recommendList = indexModel.getRecommendInfo()
     Promise.all([articleList, markList, recommendList]).then(res => {
-      console.log(res[0], res[1], res[2]);
       this.setData({
         articleList: res[0],
         markList: res[1],
@@ -45,5 +53,12 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  onReachBottom() {
+    this.setData({
+      getMore: random(20)
+    })
+    
+    console.log(this.data.getMore);
   }
 })
