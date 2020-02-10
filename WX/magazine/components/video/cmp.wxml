@@ -3,7 +3,7 @@
     <video id="{{videoId}}" bindended="onVedioEnd"
     hidden="{{showPoster}}" class="video" src="{{src}}"></video>
     <view hidden="{{!showPoster}}" class="poster-container">
-      <image  src="{{poster}}"></image>
+      <image  class="poster" src="{{poster}}"></image>
       <view class="controller" catch:tap="onPlay">
         <image class="play-btn" src="image/play.png"></image>
         <text class="duration">{{duration}}</text>
@@ -12,7 +12,7 @@
 
   </view>
   <view>
-    <text>{{mainTitle}}</text>
+    <text class="main-title">{{mainTitle}}</text>
   </view>
   <view catch:tap="onMaskTap" 
   class="mask" hidden="{{showPoster}}"></view>

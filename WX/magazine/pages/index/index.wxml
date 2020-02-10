@@ -1,1 +1,1 @@
-  <z-articleList article-list="{{articleList}}" />
+  <z-articleList article-list="{{articleList}}" more="{{getMore}}" magazineId="{{magazineId}}"/>

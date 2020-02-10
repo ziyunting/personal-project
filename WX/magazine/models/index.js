@@ -3,9 +3,9 @@ import {
 } from "../utils/request.js"
 
 class IndexModel extends Request {
-  getArticleList() {
+  getArticleList(magazineId=0, start=0) {
     return this.getData({
-      url: "/getIndexArticleList/0/0"
+      url: `/getIndexArticleList/${magazineId}/${start}`
     })
   }
   getMarkList() {
