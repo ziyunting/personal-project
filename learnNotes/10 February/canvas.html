@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+<canvas id="can" width="500px" height="300px"></canvas>
+</body>
+<script>
+
+
+    // var canvas = document.getElementById("can");
+    // var ctx = canvas.getContext('2d');
+    // ctx.moveTo(100, 100);
+    // ctx.lineTo(200, 100);
+    // ctx.lineTo(200, 200);
+    // ctx.lineTo(100, 200);
+    // ctx.lineTo(100, 100);
+    // ctx.stroke();
+
+
+    // var canvas = document.getElementById('can');
+    // var ctx = canvas.getContext("2d");
+    // ctx.moveTo(100,110);
+    // ctx.arcTo(100,200,200,200,10);
+    // ctx.arcTo(200,200,200,100,10);
+    // ctx.arcTo(200,100,100,100,10);
+    // ctx.arcTo(100,100,100,200,10);
+    // ctx.stroke();
+
+
+    var canvas = document.getElementById('can');
+    var ctx = canvas.getContext("2d");
+    var offset = 0;
+    var num = 0;
+    var width = 500;
+    var height = 300;
+    var timer = setInterval(function () {
+        ctx.clearRect(0, 0, 500, 300);
+        ctx.beginPath();
+        ctx.moveTo(0 + offset - 500, height / 2);
+        ctx.quadraticCurveTo(width / 4 + offset - 500, height / 2 + Math.sin(num) * 120, width / 2+ offset-500, height / 2)
+        ctx.quadraticCurveTo(width / 4 * 3 + offset - 500, height / 2 - Math.sin(num)*120, width+ offset-500, height / 2)
+        ctx.moveTo(0 + offset, height / 2);
+        ctx.quadraticCurveTo(width / 4 + offset, height / 2 + Math.sin(num)*120, width / 2+ offset, height / 2)
+        ctx.quadraticCurveTo(width / 4 * 3 + offset, height / 2 - Math.sin(num)*120, width+ offset, height / 2)
+        ctx.stroke();
+        offset += 5;
+        offset %= 500;
+        num += 0.02;
+    }, 1000 / 30)
+</script>
+</html>

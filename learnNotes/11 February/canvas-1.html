@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            width: 500px;
+            height: 300px;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<canvas id="can" width="500px" height="300px"></canvas>
+<script>
+    var canvas = document.getElementById('can');
+    var ctx = canvas.getContext('2d');
+    // ctx.beginPath();
+    // ctx.save( )
+    // ctx.translate(100, 100);
+    // ctx.rotate(Math.PI / 6);
+    // ctx.moveTo(0, 0);
+    // ctx.lineTo(100, 0);
+    // ctx.stroke();
+    //
+    // ctx.beginPath();
+    // ctx.restore();
+    // ctx.moveTo(100, 100);
+    // ctx.scale(2, 1);
+    // ctx.strokeRect(100, 100, 100, 100)
+
+    // var img = new Image();
+    // img.src = "./timg.jpg";
+    // img.onload = function () {
+    //     ctx.beginPath();
+    //     ctx.translate(100, 0);
+    //     var bg = ctx.createPattern(img, 'no-repeat');
+    //     ctx.fillStyle = bg;
+    //     ctx.fillRect(0, 0, 300, 300);
+    // }
+
+
+    // ctx.beginPath();
+    // var bg = ctx.createLinearGradient(0, 0, 200, 0);
+    // bg.addColorStop(0, "white");
+    // bg.addColorStop(1, "black");
+    // ctx.fillStyle = bg;
+    // ctx.fillRect(0, 0, 200, 100);
+
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(200, 100);
+    ctx.lineCap = "square";//round
+    ctx.stroke();
+</script>
+</body>
+</html>
